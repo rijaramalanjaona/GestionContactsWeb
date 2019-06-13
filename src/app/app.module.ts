@@ -8,6 +8,7 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactsService } from './services/contacts.service';
 import { HttpModule } from '../../node_modules/@angular/http';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   {path : 'about', component : AboutComponent},
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [ContactsService],
   bootstrap: [AppComponent]

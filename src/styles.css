@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 .spacer {
-    margin-top : 30px
+  margin-top : 30px
+}
+
+.nav-pills > li.active {
+  background-color: #007bff !important;
+  color: #ffffff !important;
+}
+
+.nav-pills > li > a:hover {
+  color: #007bff !important;
+}
+
+a.nav-link {
+  cursor: pointer;
 }

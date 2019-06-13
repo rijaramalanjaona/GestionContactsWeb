@@ -7,8 +7,8 @@ export class ContactsService {
 
   constructor(private http: Http) { }
 
-  getContacts() {
-    return this.http.get('http://localhost:8080/chercherContacts?motCle=nom&page=0&size=5')
+  getContacts(motCle: string, page: number, size: number) {
+    return this.http.get('http://localhost:8080/chercherContacts?motCle=' + motCle + '&page=' + page + '&size=' + size)
       .map(data => data.json());
   }
 

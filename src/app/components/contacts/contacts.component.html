@@ -2,22 +2,34 @@
   <div class="card">
     <div class="card-header">Liste des contacts</div>
     <div class="card-body">
-        <table class="table table-striped">
-          <tr>
-            <th>ID</th>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Email</th>
-          </tr>
-          <tr *ngFor="let contact of pageContacts?.content">
-            <!--pageContacts? équivaut à pageContacts !== null -->
-            <!--pageContacts?.content car Page<Contact> de java crée une clé content dans le résultat -->
-            <td>{{contact.id}}</td>
-            <td>{{contact.nom}}</td>
-            <td>{{contact.prenom}}</td>
-            <td>{{contact.email}}</td>
-          </tr>
-        </table>
+      <div class="form-group">
+        <label>Mot clé : </label>
+        <input type="text" [(ngModel)]="motCle" />
+        <button class="btn btn-primary" (click)="chercher()">Chercher</button>
+      </div>
+      <table class="table table-striped">
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Email</th>
+        </tr>
+        <tr *ngFor="let contact of pageContacts?.content">
+          <!--pageContacts? équivaut à pageContacts !== null -->
+          <!--pageContacts?.content car Page<Contact> de java crée une clé "content" dans le résultat -->
+          <td>{{contact.id}}</td>
+          <td>{{contact.nom}}</td>
+          <td>{{contact.prenom}}</td>
+          <td>{{contact.email}}</td>
+        </tr>
+      </table>
+      <div class="container">
+        <ul class="nav nav-pills">
+          <li class="nav-item" [ngClass]="{'active':i==currentPage}" *ngFor="let page of totalPages; let i = index">
+            <a class="nav-link" (click)="gotoPage(i)">{{i + 1}}</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
