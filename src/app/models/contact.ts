@@ -3,7 +3,7 @@ export class Contact {
   nom = '';
   prenom = '';
   email = '';
-  dateNaissace: Date;
+  dateNaissance: Date;
   tel = 0;
   photo = '';
 }
