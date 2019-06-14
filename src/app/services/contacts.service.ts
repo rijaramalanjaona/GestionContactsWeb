@@ -28,4 +28,8 @@ export class ContactsService {
       .map(data => data.json());
   }
 
+  deleteContact(id: number) {
+    return this.http.delete('http://localhost:8080/contacts/' + id);
+  }
+
 }
