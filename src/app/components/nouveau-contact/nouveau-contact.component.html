@@ -1,0 +1,31 @@
+<div class="container spacer">
+  <div class="card">
+      <div class="card-header">Nouveau contact</div>
+      <div class="card-body">
+        <form #f="ngForm" (ngSubmit)="onSaveContact(f.value)">
+          <div class="form-group">
+            <label>Nom : </label>
+            <input type="text" ngModel name="nom" required class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Prénom : </label>
+            <input type="text" ngModel name="prenom" required class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Email : </label>
+            <input type="email" ngModel name="email" required class="form-control" email />
+          </div>
+          <div class="form-group">
+            <label>Date de naissance : </label>
+            <input type="date" ngModel name="dateNaissance" required class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Tél : </label>
+            <input type="text" ngModel name="tel" required class="form-control" />
+          </div>
+
+          <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Enregistrer</button>
+        </form>
+      </div>
+  </div>
+</div>
