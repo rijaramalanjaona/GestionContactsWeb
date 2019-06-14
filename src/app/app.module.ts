@@ -9,10 +9,12 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactsService } from './services/contacts.service';
 import { HttpModule } from '../../node_modules/@angular/http';
 import {FormsModule} from '@angular/forms';
+import { NewContactComponent } from './components/new-contact/new-contact.component';
 
 const appRoutes: Routes = [
   {path : 'about', component : AboutComponent},
   {path : 'contacts', component : ContactsComponent},
+  {path : 'new-contact', component : NewContactComponent},
   {path : '', redirectTo : '/about', pathMatch : 'full'}
 ];
 
@@ -20,7 +22,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ContactsComponent,
-    AboutComponent
+    AboutComponent,
+    NewContactComponent
   ],
   imports: [
     BrowserModule,

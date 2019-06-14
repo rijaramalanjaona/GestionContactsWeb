@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import {Contact} from '../models/contact';
 
 @Injectable()
 export class ContactsService {
@@ -9,6 +10,11 @@ export class ContactsService {
 
   getContacts(motCle: string, page: number, size: number) {
     return this.http.get('http://localhost:8080/chercherContacts?motCle=' + motCle + '&page=' + page + '&size=' + size)
+      .map(data => data.json());
+  }
+
+  saveContact(contact: Contact) {
+    return this.http.post('http://localhost:8080/contacts', contact)
       .map(data => data.json());
   }
 
