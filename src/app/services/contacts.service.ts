@@ -18,4 +18,14 @@ export class ContactsService {
       .map(data => data.json());
   }
 
+  getContact(id: number) {
+    return this.http.get('http://localhost:8080/contacts/' + id)
+      .map(data => data.json());
+  }
+
+  updateContact(contact: Contact) {
+    return this.http.put('http://localhost:8080/contacts/' + contact.id, contact)
+      .map(data => data.json());
+  }
+
 }

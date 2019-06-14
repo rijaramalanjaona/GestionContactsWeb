@@ -12,6 +12,6 @@
   color: #007bff !important;
 }
 
-a.nav-link {
+a.nav-link, .clickable {
   cursor: pointer;
 }
